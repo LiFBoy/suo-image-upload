@@ -1,0 +1,127 @@
+:global {
+  .nbugs-mobile-image-upload {
+    background: #fff;
+    padding: 15px;
+
+    .loading-mask {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: transparent;
+      z-index: 99999;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    .loading-wrap {
+      width: 110px;
+      height: 110px;
+      border-radius: 3px;
+      background: rgba(0, 0, 0, 0.6);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      img {
+        width: 58px;
+        height: 58px;
+        transform: translateY(-2px);
+      }
+      p {
+        font-size: 15px;
+        margin: 0;
+        color: #fff;
+        transform: translateY(-3px);
+      }
+    }
+    .err-wrap {
+      border-radius: 3px;
+      padding: 0 22px;
+      background: rgba(0, 0, 0, 0.6);
+      text-align: center;
+      font-size: 15px;
+      margin: 0;
+      color: #fff;
+    }
+
+    .am-image-picker-list {
+      padding: 0 !important;
+      margin-bottom: 0 !important;
+      margin-left: -9px;
+    }
+
+    .am-flexbox {
+      flex-wrap: wrap;
+      overflow: visible;
+    }
+
+    .am-image-picker-list .am-flexbox {
+      margin-bottom: 0;
+    }
+
+    .am-flexbox .am-flexbox-item {
+      margin-top: 10px;
+      margin-left: 9px;
+      margin-right: 0;
+    }
+
+    .am-image-picker-list .am-image-picker-item .am-image-picker-item-content {
+      border-radius: 0;
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn {
+      border-radius: 0;
+      border: 1px solid #ccc;
+    }
+
+    .am-image-picker-list .am-image-picker-item .am-image-picker-item-remove {
+      width: 20px;
+      height: 20px;
+      background-size: 15px auto;
+      background-repeat: no-repeat;
+      background-position: 100% 0;
+      position: absolute;
+      right: -6px;
+      top: -5.5px;
+      background-image: url('https://s.xiaoyuanhao.com/close1.png');
+    }
+
+    .am-image-picker-list .am-image-picker-upload-btn:before {
+      width: 3px;
+      height: 35px;
+      border-radius: 3px;
+    }
+    .am-image-picker-list .am-image-picker-upload-btn:after {
+      width: 35px;
+      height: 3px;
+      border-radius: 3px;
+    }
+  }
+
+  .nbugs-mobile-image-upload-preview-wrap {
+    z-index: 1024;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .preview-img {
+      width: 80%;
+      height: auto;
+    }
+    .close-icon {
+      width: 20px;
+      height: 20px;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+  }
+}

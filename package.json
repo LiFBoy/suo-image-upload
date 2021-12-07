@@ -1,0 +1,80 @@
+{
+  "name": "suo-image-upload",
+  "version": "0.0.1",
+  "description": "",
+  "main": "build/component.js",
+  "scripts": {
+    "prepublishOnly": "npm run compile",
+    "compile": "super-build build --autoUpdateVersion=C",
+    "clear": "super-build clear",
+    "start": "cross-env BUILD_ENV=dev SOCKET_SERVER=http://192.168.3.184:8000 roadhog server",
+    "proxy": "node config/anyproxy.config.js",
+    "build": "roadhog build",
+    "lint": "eslint --ext .js",
+    "lint-staged": "lint-staged"
+  },
+  "files": [
+    "build"
+  ],
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ant-design/icons": "^4.7.0",
+    "ali-oss": "^6.2.1",
+    "antd": "^4.2.5",
+    "antd-mobile": "^2.2.14",
+    "axios": "^0.18.0",
+    "classnames": "^2.2.6",
+    "dva": "^2.5.0-beta.2",
+    "dva-no-router": "^1.2.1",
+    "lodash": "^4.17.11",
+    "ly-downloader": "^1.0.5",
+    "nanoid": "^3.1.12",
+    "prop-types": "^15.6.2",
+    "qs": "^6.6.0",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-photo-view": "^0.5.2",
+    "ss-mobile-toast": "^0.0.2",
+    "super-build": "^0.0.1"
+  },
+  "devDependencies": {
+    "anyproxy": "^4.1.0",
+    "babel-eslint": "^10.0.1",
+    "chalk": "^2.4.2",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^3.3.0",
+    "eslint-plugin-babel": "^5.3.0",
+    "eslint-plugin-compat": "^2.6.3",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-markdown": "^1.0.0-rc.0",
+    "eslint-plugin-react": "^7.11.1",
+    "husky": "^1.2.0",
+    "lint-staged": "^8.1.0",
+    "mockjs": "^1.0.1-beta3",
+    "prettier": "^1.15.3",
+    "redbox-react": "^1.4.3",
+    "roadhog": "^2.5.0-beta.1",
+    "roadhog-api-doc": "^1.1.2",
+    "stylelint": "^9.9.0",
+    "stylelint-config-prettier": "^4.0.0",
+    "stylelint-config-standard": "^18.2.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,less}": [
+      "prettier --write",
+      "git add"
+    ],
+    "**/*.{js,jsx}": "npm run lint",
+    "**/*.less": "stylelint --syntax less"
+  }
+}

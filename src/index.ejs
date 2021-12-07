@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>组件 - 模板</title>
+  <link rel="icon" href="/favicon.png" type="image/x-icon" />
+
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <!-- 手机端调试工具 -->
+  <script src="//s.xiaoyuanhao.com/eruda/1.5.2/eruda.min.js"></script>
+  <script>
+    eruda.init();
+  </script>
+
+  <!-- 鉴权资源 -->
+  <meta name="x-server-env" content="sit" />
+  <% if (htmlWebpackPlugin.options.user_agent_type==="dingding" ){ %>
+    <script src="//g.alicdn.com/dingding/open-develop/1.9.0/dingtalk.js"></script>
+    <script src="//s.xiaoyuanhao.com/weui-x/1.0.0/ddauthcenter.js"></script>
+    <script src="//s.xiaoyuanhao.com/xiaoyuanhao-mobile/agent.js"></script>
+    <% }else if (htmlWebpackPlugin.options.user_agent_type==="weixin" ){ %>
+      <script src="//res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+      <script src="//oss.suosi.atuniversity.cn/dev/jssdk.js?v=1">
+      </script>
+      <% }else if (htmlWebpackPlugin.options.user_agent_type==="alipay" ){ %>
+        <script src="//s.xiaoyuanhao.com/auth/1.0.2/zfbauth.js"></script>
+        <script src="//s.xiaoyuanhao.com/xyh-jssdk/1.0.0/xyhjssdk.min.js"></script>
+        <script src="//s.xiaoyuanhao.com/xiaoyuanhao-mobile/agent.js"></script>
+        <% }else{ %>
+          <script src="//s.xiaoyuanhao.com/weui-x/1.2.10/authcenter.js"></script>
+          <script src="//s.xiaoyuanhao.com/xyh-jssdk/1.0.0/xyhjssdk.min.js"></script>
+          <script src="//s.xiaoyuanhao.com/xiaoyuanhao-mobile/agent.js"></script>
+          <% } %>
+            <!-- <script type="text/javascript" src="//s.xiaoyuanhao.com/nbugs/1.0.2/tracker.js"></script> -->
+</head>
+
+<body>
+  <div id="root"></div>
+</body>
+
+</html>
